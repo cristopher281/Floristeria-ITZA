@@ -1,0 +1,350 @@
+/* --------------------
+   RESET Y BASE
+-------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    color: #222;
+    background: linear-gradient(135deg, #355c7d 0%, #6c5b7b 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fondo decorativo */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #355c7dcc 0%, #6c5b7bcc 100%), 
+                url('assets/images/Imagen de WhatsApp 2025-08-18 a las 12.17.48_f008da82.jpg') center/cover no-repeat;
+    opacity: 0.93;
+    filter: blur(1.5px) brightness(0.93) saturate(1.05);
+}
+
+/* Esquinas decorativas */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -60px;
+    right: -80px;
+    width: 280px;
+    height: 280px;
+    background: url('assets/images/floral-corner2.png') no-repeat center/contain;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Contenedor general */
+main, .products-container, .about-container, .contact-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 20px;
+    box-shadow: 0 4px 32px 0 #b3001b18;
+    margin: 40px auto;
+    padding: 40px;
+    animation: fadeUp 1s ease-out;
+}
+
+/* --------------------
+   HEADER Y NAV
+-------------------- */
+header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #b3001b;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    filter: drop-shadow(0 2px 6px #b3001b44);
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #b3001b;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 22px;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a.active, nav a:hover {
+    background: #b3001b;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(179,0,27,0.2);
+}
+
+/* Efecto burbuja */
+nav a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: #b3001b33;
+    transform: scale(0);
+    transition: transform 0.3s;
+    z-index: -1;
+}
+nav a:hover::before, nav a.active::before {
+    transform: scale(1);
+}
+
+/* --------------------
+   HERO
+-------------------- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    animation: fadeIn 1.2s ease;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #b3001b;
+    margin-bottom: 20px;
+    text-shadow: 1px 2px 0 #fff, 0 2px 8px #b3001b22;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.btn, button {
+    background: linear-gradient(90deg, #b3001b 50%, #ff8fa3 100%);
+    color: #fff;
+    padding: 12px 34px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #b3001b33;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.3s;
+}
+.btn:hover, button:hover {
+    transform: translateY(-2px) scale(1.04);
+    background: linear-gradient(90deg, #ff8fa3 0%, #b3001b 100%);
+    box-shadow: 0 6px 20px #b3001b44;
+}
+
+/* --------------------
+   PRODUCTOS
+-------------------- */
+.products {
+    text-align: center;
+    margin: 50px 0;
+}
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #b3001b;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    margin: 12px auto 0 auto;
+    width: 70px;
+    height: 16px;
+    background: url('assets/images/floral-underline.png') center/contain no-repeat;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    border: 2px dashed #b3001b55;
+    border-radius: 14px;
+    background: #fff8fa;
+    padding: 20px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    animation: fadeUp 0.9s ease;
+}
+.product-card:hover {
+    border-color: #b3001b;
+    transform: translateY(-6px);
+    box-shadow: 0 6px 22px rgba(179,0,27,0.2);
+}
+.product-img img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.product-name {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.product-price {
+    color: #e63946;
+    font-weight: 700;
+}
+
+/* --------------------
+   TESTIMONIOS
+-------------------- */
+.testimonials {
+    text-align: center;
+    margin: 60px 0;
+    animation: fadeIn 1s ease;
+}
+.testimonials h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #b3001b;
+}
+.testimonial-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+.testimonial {
+    background: #fff;
+    border: 2px dashed #b3001b44;
+    border-radius: 15px;
+    max-width: 280px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+    transition: transform 0.25s, border-color 0.25s;
+}
+.testimonial:hover {
+    border-color: #b3001b;
+    transform: translateY(-5px);
+}
+.testimonial-img img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    border: 3px solid #b3001b;
+}
+.testimonial-text {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* --------------------
+   CONTACTO Y SOCIAL
+-------------------- */
+.contact-follow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #fff0f5, #fff);
+    border-radius: 16px;
+}
+.contact-info, .follow-us {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+.contact-info h3, .follow-us h3 {
+    color: #b3001b;
+    margin-bottom: 12px;
+}
+.social-icons span {
+    display: inline-block;
+    background: #fff0f3;
+    border: 2px solid #b3001b44;
+    border-radius: 50%;
+    padding: 10px;
+    color: #b3001b;
+    font-size: 1.3rem;
+    margin: 0 6px;
+    transition: all 0.25s;
+}
+.social-icons span:hover {
+    background: #b3001b;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px #b3001b55;
+}
+
+/* --------------------
+   FOOTER
+-------------------- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #fff;
+    color: #666;
+    font-size: 0.95rem;
+    border-top: 1px solid #eee;
+}
+
+/* --------------------
+   ANIMACIONES
+-------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------
+   RESPONSIVE
+-------------------- */
+@media (max-width: 900px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .testimonial-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-follow {
+        flex-direction: column;
+        text-align: center;
+    }
+}

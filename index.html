@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floristería ITZA</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Anime.js Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/Gemini_Generated_Image_ruca94ruca94ruca.png" alt="Florist Logo" style="height:48px;width:48px;margin-right:10px;vertical-align:middle;filter:drop-shadow(0 2px 8px #b3001b44);">
+            <span>Florist Name</span>
+        </div>
+        <nav>
+            <ul>a
+                <li><a href="#" class="active">PRINCIPAL</a></li>
+                <li><a href="productos.html">TIENDA</a></li>
+                <li><a href="nosotros.html">BIBLIOTECA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>FRESH FLOWERS FOR<br>EVERY OCCASION</h1>
+                <p class="hero-desc">Descubre la belleza natural y el arte floral en cada ramo. Sorprende a quienes amas con flores frescas, elegantes y llenas de vida.</p>
+                <button id="shopNowBtn" class="btn">¡Comprar ahora!</button>
+            </div>
+        </section>
+        <section class="products" id="shop">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-list">
+                <div class="product-card">
+                    <div class="product-img"><img src="assets/images/prod1.jpg" alt="Ramo Rosas"></div>
+                    <div class="product-name">Ramo Rosas</div>
+                    <div class="product-price">$300</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img"><img src="assets/images/prod2.jpg" alt="Bouquet Primavera"></div>
+                    <div class="product-name">Bouquet Primavera</div>
+                    <div class="product-price">$400</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img"><img src="assets/images/prod3.jpg" alt="Caja Floral"></div>
+                    <div class="product-name">Caja Floral</div>
+                    <div class="product-price">$500</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img"><img src="assets/images/prod4.jpg" alt="Orquídea Premium"></div>
+                    <div class="product-name">Orquídea Premium</div>
+                    <div class="product-price">$600</div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonial-list">
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="assets/images/about1.jpg" alt="Cliente 1"></div>
+                    <div class="testimonial-text">“¡El ramo más hermoso que he recibido! Atención y calidad insuperables.”</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="assets/images/about2.jpg" alt="Cliente 2"></div>
+                    <div class="testimonial-text">“Flores frescas y entrega puntual. ¡Repetiré sin duda!”</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-img"><img src="assets/images/about3.jpg" alt="Cliente 3"></div>
+                    <div class="testimonial-text">“Gran variedad y diseños únicos. ¡Recomendado!”</div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-follow" id="contact">
+            <div class="contact-info">
+                <h3>CONTACTO</h3>
+                <p>Av. Flores 123<br>Ciudad Jardín</p>
+                <p>+505 57912990<br>info@floristeria.com</p>
+            </div>
+            <div class="follow-us">
+                <h3>SÍGUENOS</h3>
+                <div class="social-icons">
+                    <span>📘</span>
+                    <span>📸</span>
+                    <span>📌</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Florist Name. All rights reserved.</p>
+    </footer>
+        <script src="script.js"></script>
+        <script>
+            // GSAP: animación de entrada para header, main y footer
+            window.addEventListener('DOMContentLoaded', function() {
+                gsap.from('header', {duration: 1, y: -60, opacity: 0, ease: 'power2.out'});
+                gsap.from('main', {duration: 1.2, y: 60, opacity: 0, delay: 0.3, ease: 'power2.out'});
+                gsap.from('footer', {duration: 1, opacity: 0, delay: 0.8});
+                // Anime.js: animación de burbuja en los enlaces del nav
+                anime({
+                    targets: 'nav a',
+                    scale: [0.8, 1],
+                    opacity: [0, 1],
+                    delay: anime.stagger(120, {start: 400}),
+                    duration: 700,
+                    easing: 'easeOutElastic(1, .8)'
+                });
+            });
+        </script>
+</body>
+</html>

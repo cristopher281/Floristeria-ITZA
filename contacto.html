@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Floristería</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Anime.js Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        .contact-container {
+            max-width: 950px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 40px 30px 30px 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+        .contact-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .contact-form, .contact-info {
+            flex: 1;
+            background: #fff;
+            border-radius: 8px;
+            padding: 0 10px;
+            text-align: left;
+        }
+        .contact-form label, .contact-info label {
+            font-size: 0.98rem;
+            font-weight: 500;
+            margin-bottom: 3px;
+            display: block;
+        }
+        .contact-form input, .contact-info input {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: #fafafa;
+        }
+        .contact-form input:focus, .contact-info input:focus {
+            outline: none;
+            border-color: #222;
+        }
+        .contact-form button {
+            padding: 10px 30px;
+            font-size: 1rem;
+            border: 1px solid #222;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .contact-form button:hover {
+            background: #222;
+            color: #fff;
+        }
+        .contact-info {
+            font-size: 1rem;
+        }
+        .contact-info input {
+            background: #f5f5f5;
+            border: 1px solid #eee;
+        }
+        .contact-footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .contact-icons {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        @media (max-width: 900px) {
+            .contact-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-title">CONTACTO</div>
+        <div class="contact-row">
+            <form class="contact-form">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Your Name" required>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Title">
+                <label for="email">Nombre *</label>
+                <input type="email" id="email" name="email" placeholder="mail@provider.com" required>
+                <button type="submit">Envia tu gener@nte</button>
+            </form>
+            <div class="contact-info">
+                <label>Trasección</label>
+                <input type="text" value="1098" readonly>
+                <label>Días</label>
+                <input type="text" value="0 - OUT-STATUS" readonly>
+                <label>Email</label>
+                <input type="text" value="CONTACTO@SO" readonly>
+                <label>Sigas</label>
+                <input type="text" value="MARIANOSIGUENOS" readonly>
+                <label>Web</label>
+                <input type="text" value="WEBDECONTACTO@SO" readonly>
+                <label>Conócenos</label>
+                <input type="text" value="+101 3011 080" readonly>
+            </div>
+        </div>
+        <div class="contact-footer">
+            <div class="contact-icons">
+                <span>🌐</span>
+                <span>📘</span>
+                <span>🐦</span>
+                <span>📸</span>
+            </div>
+            </div>
+                    <a href="index.html" class="btn-back">&#8592; Regresar al inicio</a>
+            </div>
+            <script>
+                window.addEventListener('DOMContentLoaded', function() {
+                    gsap.from('.contact-title', {duration: 1, y: -40, opacity: 0, ease: 'power2.out'});
+                    gsap.from('.contact-form', {duration: 1, x: -60, opacity: 0, delay: 0.2, ease: 'power2.out'});
+                    gsap.from('.contact-info', {duration: 1, x: 60, opacity: 0, delay: 0.2, ease: 'power2.out'});
+                    gsap.from('.contact-icons span', {
+                        duration: 1.1,
+                        scale: 0.7,
+                        opacity: 0,
+                        stagger: 0.18,
+                        delay: 0.6,
+                        ease: 'back.out(1.7)'
+                    });
+                    anime({
+                        targets: '.btn-back',
+                        scale: [0.7, 1],
+                        opacity: [0, 1],
+                        duration: 900,
+                        delay: 900,
+                        easing: 'easeOutElastic(1, .8)'
+                    });
+                });
+            </script>
+</body>
+</html>
